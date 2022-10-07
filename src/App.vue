@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar" style="background-color: #0e8ccc;">
-    <div class="container-fluid">
+    <div class="container-fluid mx-sm-1 mx-md-3 mx-lg-5">
       <router-link style="text-decoration: none;" to="/">Inicio</router-link> |
       <router-link style="text-decoration: none;" to="/charge-points">Puntos de carga</router-link> |
       <router-link style="text-decoration: none;" to="/tas">Terminales TAS</router-link> |
