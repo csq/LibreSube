@@ -1,9 +1,11 @@
 <template>
-  <nav>
-    <router-link to="/">Inicio</router-link> |
-    <router-link to="/charge-points">Puntos de carga</router-link> |
-    <router-link to="/tas">Terminales TAS</router-link> |
-    <router-link to="/data">Info</router-link>
+  <nav class="navbar" style="background-color: #0e8ccc;">
+    <div class="container-fluid">
+      <router-link style="text-decoration: none;" to="/">Inicio</router-link> |
+      <router-link style="text-decoration: none;" to="/charge-points">Puntos de carga</router-link> |
+      <router-link style="text-decoration: none;" to="/tas">Terminales TAS</router-link> |
+      <router-link style="text-decoration: none;" to="/data">Info</router-link>
+    </div>
   </nav>
   <router-view/>
 </template>
@@ -23,10 +25,10 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #ffffff;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #292b23;
 }
 </style>
