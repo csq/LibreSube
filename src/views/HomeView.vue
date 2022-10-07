@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <GreeterMessage msg="Bienvenido al portal LibreSUBE"/>
-    <img alt="logo" src="../assets/logo.svg" width=600 height=500>
+    <img class="img-responsive img-max" alt="logo" src="../assets/logo.svg">
   </div>
 </template>
 
@@ -16,3 +16,11 @@ export default {
   }
 }
 </script>
+
+<style>
+
+.img-max {
+  max-width: 800px;
+  margin-top: 2rem;
+}
+</style>
