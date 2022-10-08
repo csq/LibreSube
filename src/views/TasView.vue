@@ -55,7 +55,11 @@ export default {
           return L.circleMarker(latlng, geojsonMarkerOptions);
         },
         onEachFeature: function (feature, layer) {
-          layer.bindPopup(feature.properties.Provincia);
+          layer.bindPopup(
+            '<b><center>' + feature.properties[ 'Ubicaci�' ] + '</center></b>' + '<br>'+
+            '<b>Dirección: </b>' + feature.properties[ 'Direcci�' ] + '<br>'+
+            '<b>Localidad: </b>' + feature.properties.Localidad + '<br>'+
+            '<b>Tipo: </b>' + feature.properties[ 'Tipo Ubica' ]);
         }
       }).addTo(mapDiv);
     },
