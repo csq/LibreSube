@@ -8,7 +8,18 @@
     </div>
   </nav>
   <router-view/>
+  <Footer></Footer>
 </template>
+
+<script>
+import Footer from './components/FooterSegment'
+
+export default {
+  components: {
+      Footer
+  }
+}
+</script>
 
 <style>
 #app {
