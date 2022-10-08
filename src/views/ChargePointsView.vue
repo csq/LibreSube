@@ -1,7 +1,12 @@
 <template>
-  <div class="charge-points">
-    <div id="mapContainer"></div>
-  </div>
+  <form class="row input-bottom-margin-10 ng-pristine ng-valid" method="post">
+    <div class="col-md-3 col-6 pt-2">
+      <div class="form-group" data-ng-class="{'state-loading': getProvinces}" style="">
+        <select class="form-select ng-pristine ng-untouched ng-valid ng-empty" data-ng-model="Filtro.Province" id="city" name="dllProvince" data-ng-options="Province as Province.Descripcion  for Province in Provinces" data-ng-change="ViewDataLocations()" aria-invalid="false"><option value="" disabled="" selected="selected" class="">Provincia</option><option label="BUENOS AIRES" value="object:4">BUENOS AIRES</option><option label="CABA" value="object:5">CABA</option><option label="CATAMARCA" value="object:6">CATAMARCA</option><option label="CHACO" value="object:7">CHACO</option><option label="CHUBUT" value="object:8">CHUBUT</option><option label="CÓRDOBA" value="object:9">CÓRDOBA</option><option label="CORRIENTES" value="object:10">CORRIENTES</option><option label="ENTRE RÍOS" value="object:11">ENTRE RÍOS</option><option label="FORMOSA" value="object:12">FORMOSA</option><option label="JUJUY" value="object:13">JUJUY</option><option label="LA PAMPA" value="object:14">LA PAMPA</option><option label="MENDOZA" value="object:15">MENDOZA</option><option label="MISIONES" value="object:16">MISIONES</option><option label="NEUQUÉN" value="object:17">NEUQUÉN</option><option label="RÍO NEGRO" value="object:18">RÍO NEGRO</option><option label="SAN JUAN" value="object:19">SAN JUAN</option><option label="SAN LUIS" value="object:20">SAN LUIS</option><option label="SANTA FE" value="object:21">SANTA FE</option><option label="TIERRA DEL FUEGO" value="object:22">TIERRA DEL FUEGO</option></select>
+      </div>
+    </div>
+  </form>
+  <div id="mapContainer"></div>
 </template>
 
 <script>
@@ -60,10 +65,13 @@
       this.setupLeafletMap();
     },
   };
-  </script>
+</script>
   
-  <style scoped>
-  #mapContainer {
-    height: 550px;
-  }
-  </style>
+<style scoped>
+.form-group {
+  padding-bottom: 10px;
+}
+#mapContainer {
+  height: 550px;
+}
+</style>

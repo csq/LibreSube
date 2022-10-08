@@ -7,7 +7,9 @@
       <router-link style="text-decoration: none;" to="/data">Info</router-link>
     </div>
   </nav>
-  <router-view/>
+  <div class="container pt-1 pb-5">
+    <router-view/>
+  </div>
   <Footer></Footer>
 </template>
 
