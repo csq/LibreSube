@@ -75,6 +75,7 @@ export default {
 .form-group {
   padding-bottom: 10px;
 }
+
 #mapContainer {
   height: 550px;
 }

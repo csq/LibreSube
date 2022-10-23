@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style>
-
 .img-max {
   max-width: 800px;
   margin-top: 2rem;
