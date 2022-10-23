@@ -4,7 +4,8 @@
       <router-link style="text-decoration: none;" to="/">Inicio</router-link> |
       <router-link style="text-decoration: none;" to="/charge-points">Puntos de carga</router-link> |
       <router-link style="text-decoration: none;" to="/tas">Terminales TAS</router-link> |
-      <router-link style="text-decoration: none;" to="/data">Info</router-link>
+      <router-link style="text-decoration: none;" to="/data">Info</router-link> |
+      <router-link style="text-decoration: none;" to="/about">Acerca</router-link>
     </div>
   </nav>
   <div class="container pt-1 pb-5">
