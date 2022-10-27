@@ -11,6 +11,9 @@
 
 <script>
 import L from "leaflet";
+import { MarkerClusterGroup } from 'leaflet.markercluster';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+
 import dataset from "@/datasets/Puntos de carga SUBE/sube_red_de_carga_activa_2019-10-01.geojson";
   
 var geojsonMarkerOptions = {
@@ -40,28 +43,36 @@ export default {
           '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | <a href="http://www.ign.gob.ar/AreaServicios/Argenmap/IntroduccionV2" target="_blank">Instituto Geográfico Nacional</a> + <a href="http://www.osm.org/copyright" target="_blank">OpenStreetMap</a>',
           minZoom: 3,
           maxZoom: 50,
-        }
+       }
       ).addTo(mapDiv);
 
+      // Contendra al conjunto de marcadores
+      var markers = new MarkerClusterGroup();
+      
       L.geoJson(dataset, {
         pointToLayer: function (feature) {
           
           // Obtener latitud y longitud del archivo geojson
-          var lat = feature.properties.Latitud
-          var lng = feature.properties.Longitud
+          var coords = [feature.properties.Longitud, feature.properties.Latitud]
+          var latlng = L.GeoJSON.coordsToLatLng(coords);
 
-          var latlng = L.latLng(lat, lng);
-
-          return L.circleMarker(latlng, geojsonMarkerOptions);
-        },
-        onEachFeature: function (feature, layer) {
-          layer.bindPopup(
-          '<b><center>' + feature.properties[ 'Ubicaci�' ] + '</center></b>' + '<br>'+
-          '<b>Dirección: </b>' + feature.properties[ 'Direcci�' ] + '<br>'+
-          '<b>Localidad: </b>' + feature.properties.Localidad + '<br>'+
-          '<b>Tipo: </b>' + feature.properties[ 'Tipo Ubica' ]);
-      }
-      }).addTo(mapDiv);
+          // Cada marcador es un circulo con su propia lat y lng 
+          var marker = L.circleMarker(latlng, geojsonMarkerOptions);
+          
+          // Define el formato del popup
+          marker.bindPopup(
+            '<b><center>' + feature.properties[ 'Ubicaci�' ] + '</center></b>' + '<br>'+
+            '<b>Dirección: </b>' + feature.properties[ 'Direcci�' ] + '<br>'+
+            '<b>Localidad: </b>' + feature.properties.Localidad + '<br>'+
+            '<b>Tipo: </b>' + feature.properties[ 'Tipo Ubica' ]);
+          
+          // Agrega cada marcador al conjunto de marcadores
+          markers.addLayers(marker);
+        }
+      })
+      
+      // Agrega los marcadores en el mapa
+      mapDiv.addLayer(markers);
     },
   },
 
