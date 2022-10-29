@@ -19,8 +19,7 @@ import dataset from "@/datasets/Puntos de carga SUBE/sube_red_de_carga_activa_20
   
 var geojsonMarkerOptions = {
     radius: 8,
-    fillColor: "#52c7ea",
-    color: "#000",
+    color: "#0378A6",
     weight: 1,
     opacity: 1,
     fillOpacity: 0.8

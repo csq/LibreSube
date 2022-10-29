@@ -19,8 +19,7 @@ import dataset from "@/datasets/Terminales Automáticas SUBE/sube_terminales_aut
 
 var geojsonMarkerOptions = {
     radius: 8,
-    fillColor: "#42b983",
-    color: "#000",
+    color: "#483E8C",
     weight: 1,
     opacity: 1,
     fillOpacity: 0.8
