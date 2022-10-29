@@ -11,12 +11,15 @@
 
 <script>
 import L from "leaflet";
+import { MarkerClusterGroup } from 'leaflet.markercluster';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+
 import dataset from "@/datasets/Terminales Automáticas SUBE/sube_terminales_autoservicio_activas_2019-10-01.geojson";
 
 var geojsonMarkerOptions = {
     radius: 8,
-    fillColor: "#42b983",
-    color: "#000",
+    color: "#483E8C",
     weight: 1,
     opacity: 1,
     fillOpacity: 0.8
@@ -43,25 +46,33 @@ export default {
        }
       ).addTo(mapDiv);
 
+      // Contendra al conjunto de marcadores
+      var markers = new MarkerClusterGroup();
+      
       L.geoJson(dataset, {
         pointToLayer: function (feature) {
           
           // Obtener latitud y longitud del archivo geojson
-          var lat = feature.properties.Latitud
-          var lng = feature.properties.Longitud
+          var coords = [feature.properties.Longitud, feature.properties.Latitud]
+          var latlng = L.GeoJSON.coordsToLatLng(coords);
 
-          var latlng = L.latLng(lat, lng);
-
-          return L.circleMarker(latlng, geojsonMarkerOptions);
-        },
-        onEachFeature: function (feature, layer) {
-          layer.bindPopup(
+          // Cada marcador es un circulo con su propia lat y lng 
+          var marker = L.circleMarker(latlng, geojsonMarkerOptions);
+          
+          // Define el formato del popup
+          marker.bindPopup(
             '<b><center>' + feature.properties[ 'Ubicaci�' ] + '</center></b>' + '<br>'+
             '<b>Dirección: </b>' + feature.properties[ 'Direcci�' ] + '<br>'+
             '<b>Localidad: </b>' + feature.properties.Localidad + '<br>'+
             '<b>Tipo: </b>' + feature.properties[ 'Tipo Ubica' ]);
+          
+          // Agrega cada marcador al conjunto de marcadores
+          markers.addLayers(marker);
         }
-      }).addTo(mapDiv);
+      })
+      
+      // Agrega los marcadores en el mapa
+      mapDiv.addLayer(markers);
     },
   },
 
