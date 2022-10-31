@@ -1,4 +1,5 @@
 <template>
+  <h5>{{ LineChartTitle }}</h5>
   <Line
     :chart-options="chartOptions"
     :chart-data="chartData"
@@ -69,6 +70,7 @@ export default {
   },
   data() {
     return {
+      LineChartTitle: 'Operaciones de viaje por mes en la Región Metropolitana de Buenos Aires',
       chartData: {
         labels: mes,
         datasets: [ {
@@ -79,7 +81,8 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+        animation: true 
       }
     }
   }

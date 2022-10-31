@@ -1,4 +1,5 @@
 <template>
+  <h5>{{ BarChartTitle }}</h5>
   <Bar
     :chart-options="chartOptions"
     :chart-data="chartData"
@@ -74,6 +75,7 @@ export default {
   },
   data() {
     return {
+      BarChartTitle: 'Usuarios por día',
       chartData: {
         labels: date,
         datasets: [ {

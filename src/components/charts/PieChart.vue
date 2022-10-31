@@ -1,4 +1,5 @@
 <template>
+  <h5>{{ PieChartTitle }}</h5>
   <Pie
     :chart-options="chartOptions"
     :chart-data="chartData"
@@ -76,6 +77,7 @@ export default {
   },
   data() {
     return {
+      PieChartTitle: 'Usuarios anuales por modo de transporte',
       chartData: {
         labels: [ 'Colectivo', 'Tren', 'Subte' ],
         datasets: [ {
@@ -85,7 +87,8 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+        animation: true
       }
     }
   }
