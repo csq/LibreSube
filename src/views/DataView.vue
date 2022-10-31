@@ -6,12 +6,12 @@
       </div>
     </div>
     <div class="row align-items-md-stretch">
-      <div class="col-md-6">
+      <div class="col-md-6 mb-4">
         <div class="h-100 p-4 bg-light border rounded-3">
           <PieChart></PieChart>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 mb-4">
         <div class="h-100 p-4 pt-4 bg-light border rounded-3">
           <LineChart></LineChart>
         </div>
