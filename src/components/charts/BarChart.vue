@@ -11,32 +11,33 @@
     :width="width"
     :height="height"
   />
+  <div class="dropdown">
+    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Año
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item selected" v-on:click="getData(2022)">2022</a></li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li><a class="dropdown-item" v-on:click="getData(2021)">2021</a></li>
+      <li><a class="dropdown-item" v-on:click="getData(2020)">2020</a></li>
+    </ul>
+  </div>
 </template>
-  
+
 <script>
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 
 import data from "@/datasets/Info SUBE/total-usuarios-por-dia.csv";
 
+// Arrays con los datos del csv
 var date = new Array();
 var bus = new Array();
 var subway = new Array();
 var train = new Array();
-
-var año = '2022'
-
-const regex = new RegExp(año+'-*');
-
-for (let i = 0; i < data.length; i++) {
-
-  if (regex.test(data[i].indice_tiempo)) {
-    date.push(data[i].indice_tiempo)
-    bus.push(data[i].colectivo)
-    subway.push(data[i].subte)
-    train.push(data[i].tren)
-  }
-}
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -75,7 +76,7 @@ export default {
   },
   data() {
     return {
-      BarChartTitle: 'Usuarios por día',
+      BarChartTitle: null,
       chartData: {
         labels: date,
         datasets: [ {
@@ -99,6 +100,33 @@ export default {
         maintainAspectRatio: false
       }
     }
+  },
+  methods: {
+    getData: function (year) {
+      if ( this.chartData.datasets[0].data.length != 0) {
+        this.chartData.labels.length = 0;
+        this.chartData.datasets[0].data.length = 0;
+        this.chartData.datasets[1].data.length = 0;
+        this.chartData.datasets[2].data.length = 0;
+      }
+
+      const regex = new RegExp(year+'-*');
+      var index = 0;
+
+      for (let i = 0; i < data.length; i++) {
+        if (regex.test(data[i].indice_tiempo)) {
+          this.chartData.labels[index] = data[i].indice_tiempo;
+          this.chartData.datasets[0].data[index] = data[i].colectivo;
+          this.chartData.datasets[1].data[index] = data[i].subte;
+          this.chartData.datasets[2].data[index] = data[i].tren;
+          index++;
+        }
+      }
+      this.BarChartTitle = 'Usuarios por día en el año ' + year;
+    }
+  },
+  created: function() {
+    this.getData('2022');
   }
 }           
 </script>
