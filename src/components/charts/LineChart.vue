@@ -79,7 +79,7 @@ export default {
   },
   data() {
     return {
-      LineChartTitle: null,
+      LineChartTitle: '',
       chartData: {
         labels: mes,
         datasets: [{
@@ -96,8 +96,10 @@ export default {
   },
   methods: {
     getData: function (year) {
-      if (this.chartData.datasets[0].data.length != 0) {
-        this.chartData.datasets[0].data.length = 0;
+      var datasets = this.chartData.datasets;
+
+      if (datasets[0].data.length != 0) {
+        datasets[0].data.length = 0;
       }
 
       const regex = new RegExp(year);

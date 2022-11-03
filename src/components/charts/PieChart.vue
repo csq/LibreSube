@@ -12,17 +12,17 @@
     :height="height"
   />
   <div class="dropdown">
-  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Año
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark">
-    <li><a class="dropdown-item selected" v-on:click="getData(2019)">2019</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" v-on:click="getData(2018)">2018</a></li>
-    <li><a class="dropdown-item" v-on:click="getData(2017)">2017</a></li>
-    <li><a class="dropdown-item" v-on:click="getData(2016)">2016</a></li>
-  </ul>
-</div>
+    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Año
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item selected" v-on:click="getData(2019)">2019</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" v-on:click="getData(2018)">2018</a></li>
+      <li><a class="dropdown-item" v-on:click="getData(2017)">2017</a></li>
+      <li><a class="dropdown-item" v-on:click="getData(2016)">2016</a></li>
+    </ul>
+  </div>
 </template>
   
 <script>
@@ -74,7 +74,7 @@ export default {
   // Configuración PieChart
   data() {
     return {
-      PieChartTitle: null,
+      PieChartTitle: '',
       chartData: {
         labels: [ 'Colectivo', 'Tren', 'Subte' ],
         datasets: [ {

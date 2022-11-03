@@ -76,7 +76,7 @@ export default {
   },
   data() {
     return {
-      BarChartTitle: null,
+      BarChartTitle: '',
       chartData: {
         labels: date,
         datasets: [ {
@@ -103,11 +103,14 @@ export default {
   },
   methods: {
     getData: function (year) {
-      if ( this.chartData.datasets[0].data.length != 0) {
-        this.chartData.labels.length = 0;
-        this.chartData.datasets[0].data.length = 0;
-        this.chartData.datasets[1].data.length = 0;
-        this.chartData.datasets[2].data.length = 0;
+      var datasets = this.chartData.datasets;
+      var labels = this.chartData.labels;
+
+      if ( datasets[0].data.length != 0) {
+        labels.length = 0;
+        datasets[0].data.length = 0;
+        datasets[1].data.length = 0;
+        datasets[2].data.length = 0;
       }
 
       const regex = new RegExp(year+'-*');
@@ -115,14 +118,14 @@ export default {
 
       for (let i = 0; i < data.length; i++) {
         if (regex.test(data[i].indice_tiempo)) {
-          this.chartData.labels[index] = data[i].indice_tiempo;
-          this.chartData.datasets[0].data[index] = data[i].colectivo;
-          this.chartData.datasets[1].data[index] = data[i].subte;
-          this.chartData.datasets[2].data[index] = data[i].tren;
+          labels[index] = data[i].indice_tiempo;
+          datasets[0].data[index] = data[i].colectivo;
+          datasets[1].data[index] = data[i].subte;
+          datasets[2].data[index] = data[i].tren;
           index++;
         }
       }
-      this.BarChartTitle = 'Usuarios por día en el año ' + year;
+      this.BarChartTitle = 'Usuarios por día en ' + year;
     }
   },
   created: function() {
