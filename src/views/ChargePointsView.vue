@@ -16,7 +16,10 @@ import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 import dataset from "@/datasets/Puntos de carga SUBE/sube_red_de_carga_activa_2019-10-01.geojson";
-  
+
+// Variable contendrá la instancia del mapa
+var map;
+
 var geojsonMarkerOptions = {
     radius: 8,
     color: "#0378A6",
@@ -24,27 +27,27 @@ var geojsonMarkerOptions = {
     opacity: 1,
     fillOpacity: 0.8
 };
-  
+
 export default {
-  name: "ChargePointsView",
+  name: "TasView",
   data() {
     return{
-      center: [-41, -60] // Arg
+      center: [-41, -60], // Arg
+      minZoom: 4,
+      maxZoom: 15
     }
   },
   
   methods: {
-    setupLeafletMap: function () {
-      const mapDiv = L.map("mapContainer").setView(this.center, 4);
+    setupLeafletMap: function (center, zoom) {
+      map = L.map("mapContainer").setView(center, zoom);
       L.tileLayer(
         'https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png',
         {
           attribution:
           '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | <a href="http://www.ign.gob.ar/AreaServicios/Argenmap/IntroduccionV2" target="_blank">Instituto Geográfico Nacional</a> + <a href="http://www.osm.org/copyright" target="_blank">OpenStreetMap</a>',
-          minZoom: 3,
-          maxZoom: 50,
        }
-      ).addTo(mapDiv);
+      ).addTo(map);
 
       // Contendra al conjunto de marcadores
       var markers = new MarkerClusterGroup();
@@ -72,16 +75,45 @@ export default {
       })
       
       // Agrega los marcadores en el mapa
-      mapDiv.addLayer(markers);
+      map.addLayer(markers);
     },
   },
 
   mounted() {
-    this.setupLeafletMap();
+    this.setupLeafletMap(this.center, this.minZoom);
   },
+
+  created() {
+    const success = (position) => {
+      // Obtener lat y lng
+      this.center = [position.coords.latitude, position.coords.longitude];
+
+      // Marcador en la posición geolocalizada
+      var marker = new L.Marker(this.center);
+      map.setView(this.center, this.maxZoom);
+      marker.addTo(map);
+      marker.bindPopup('<b>Ubicación <br> apróximada</b>');
+    };
+
+    const error = (err) => {
+      //console.warn(`ERROR(${err.code}): ${err.message}`);
+      if (err.code == 1) {
+        // User denied geolocation
+      } 
+    };
+
+    const options = {
+      enableHighAccuracy: false,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    // Esto abrirá una ventana emergente de permiso
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  }
 };
 </script>
-  
+
 <style scoped>
 .form-group {
   padding-bottom: 10px;
