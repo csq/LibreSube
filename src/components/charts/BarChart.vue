@@ -30,6 +30,7 @@
 <script>
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import zoomPlugin from 'chartjs-plugin-zoom';
 
 import data from "@/datasets/Info SUBE/total-usuarios-por-dia.csv";
 
@@ -39,7 +40,7 @@ var bus = new Array();
 var subway = new Array();
 var train = new Array();
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, zoomPlugin)
 
 export default {
   name: 'BarChart',
@@ -97,7 +98,28 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+        plugins: {
+          zoom: {
+            zoom: {
+              wheel: {
+                enabled: true,
+                speed: 0.2
+              },
+              pinch: {
+                enabled: true
+              },
+              drag: {
+                enabled: true,
+                backgroundColor: 'rgba(0, 103, 255, 0.20)',
+                borderColor: 'rgba(18, 18, 18, 1)',
+                borderWidth: 0.3,
+                threshold: 2
+              },
+              mode: 'x'
+            }
+          }
+        }
       }
     }
   },
