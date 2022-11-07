@@ -13,8 +13,13 @@
 </template>
 
 <style scoped>
+@media screen and (max-width: 480px) {
+  .footer {
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+}
 .footer {
-  width: 100%;
   background: #333333;
   text-align: center;
 }
