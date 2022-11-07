@@ -8,7 +8,7 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card h-100">
-        <img src="../assets/card_images/charge_img.png" class="card-img-top" alt="charge_img">
+        <img src="../assets/card_images/img-0.png" class="card-img-top" alt="charge_img">
         <a href="/charge-points"></a>
         <div class="card-body">
           <h5 class="card-title">Puntos de carga</h5>
@@ -21,7 +21,7 @@
     </div>
     <div class="col">
       <div class="card h-100">
-        <img src="../assets/card_images/tas_img.png" class="card-img-top" alt="tas_img">
+        <img src="../assets/card_images/img-1.png" class="card-img-top" alt="tas_img">
         <div class="card-body">
           <h5 class="card-title">Terminales automáticas SUBE</h5>
           <p class="card-text">Encuentre las terminales TAS más cercanas.</p>
@@ -33,7 +33,7 @@
     </div>
     <div class="col">
       <div class="card h-100" style="height: 1rem;">
-        <img src="../assets/card_images/chart_img.png" class="card-img-top" alt="chart_img">
+        <img src="../assets/card_images/img-2.png" class="card-img-top" alt="chart_img">
         <div class="card-body">
           <h5 class="card-title">Gráficas del uso del sistema SUBE</h5>
           <p class="card-text">Visualice los datos referente al uso del sistema SUBE.</p>
