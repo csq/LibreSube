@@ -7,14 +7,13 @@
 </template>
 
 <script>
-import Footer from './components/FooterSegment'
 import Navbar from './components/NavBarSegment'
-
+import Footer from './components/FooterSegment'
 
 export default {
   components: {
-      Footer,
-      Navbar
+    Navbar,
+    Footer
   }
 }
 </script>

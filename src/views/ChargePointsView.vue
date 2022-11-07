@@ -11,7 +11,7 @@
             <b>Puntos de carga SUBE</b>
           </div>
           <div class="card-body">
-            Son lugares habilitados donde podes cargar tu Tarjeta SUBE en forma presencial, estos puntos de carga se encuentran distribuidos por todo el país.
+            Son lugares habilitados donde podés cargar tu Tarjeta SUBE en forma presencial, estos puntos de carga se encuentran distribuidos por todo el país.
             <br><br>
             <strong>Tipos de puntos de carga:</strong>
             <ul>
@@ -19,7 +19,7 @@
               <li>Locutorios</li>
               <li>Sucursales del Correo Argentino</li>
               <li>Terminales de Autoservicio SUBE</li>
-              <li>Centros de Atención SUBE en distintos puntos del Área Metropolitana de Buenos Aires</li>
+              <li>Centros de Atención SUBE</li>
               <li>Agencias de Lotería Nacionales y Provinciales que tengan habilitado el servicio de recarga de SUBE</li>
             </ul>
           </div>

@@ -11,9 +11,9 @@
             <b>Terminal Automática SUBE (TAS)</b>
           </div>
           <div class="card-body">
-            Las terminales <strong>TAS</strong> tambien conocidas como <strong>totems SUBE</strong>, son dispositivos de facil uso que funcionan las 24 hs, simplemente apoyando tu tarjeta.
+            Las terminales <strong>TAS</strong> también conocidas como <strong>totems SUBE</strong>, son dispositivos de fácil uso que funcionan las 24 hs, simplemente apoyando tu tarjeta.
             <br><br>
-            <strong>Operaciones que podes realizar:</strong>
+            <strong>Operaciones que podés realizar:</strong>
             <ul>
               <li>Consultar el  saldo de tarjeta SUBE al instante</li>
               <li>Aplicar las Tarifas Sociales en caso de que corresponda</li>
