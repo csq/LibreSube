@@ -114,7 +114,7 @@ export default {
 
       }
       // Establece en título del chart según el año seleccionado
-      this.PieChartTitle = 'Usuarios en '+year+' por modo de transporte';
+      this.PieChartTitle = 'Usuarios en '+year+' por modo de transporte en la Región Metropolitana de Buenos Aires';
       
       this.updateData();
     },
