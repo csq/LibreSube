@@ -34,6 +34,8 @@ import L from "leaflet";
 import { MarkerClusterGroup } from 'leaflet.markercluster';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js';
+import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
 
 import dataset from "@/datasets/Puntos de carga SUBE/sube_red_de_carga_activa_2019-10-01.geojson";
 
@@ -68,6 +70,9 @@ export default {
           '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | <a href="http://www.ign.gob.ar/AreaServicios/Argenmap/IntroduccionV2" target="_blank">Instituto Geográfico Nacional</a> + <a href="http://www.osm.org/copyright" target="_blank">OpenStreetMap</a>',
        }
       ).addTo(map);
+
+      // Agrega un nuevo control al mapa para funcion fullscreen
+      map.addControl(new L.Control.Fullscreen());
 
       // Contendra al conjunto de marcadores
       var markers = new MarkerClusterGroup();
