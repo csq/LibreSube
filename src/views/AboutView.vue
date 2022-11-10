@@ -15,33 +15,42 @@
         <ul class="list">
         <li>
           <a
-            href="https://datos.transporte.gob.ar/dataset/puntos-carga-sube" target="_blank"
-            class="text-decoration-none">Puntos de carga</a
-          >
+            href="https://datos.transporte.gob.ar/dataset/puntos-carga-sube/archivo/7c90f2ec-af99-4e07-99ae-1ab3e8e1a26d" target="_blank"
+            class="text-decoration-none">Puntos de carga
+          </a>
+          <p>Último cambio 15 de junio de 2022</p>
         </li>
         <li>
-          <a href="https://datos.transporte.gob.ar/dataset/terminales-automaticas-sube" target="_blank"
-          class="text-decoration-none">Terminales Automáticas</a
-          >
+          <a
+            href="https://datos.transporte.gob.ar/dataset/terminales-automaticas-sube/archivo/e2a67874-0b8b-485e-bace-a8e3a4cf86d1" target="_blank"
+            class="text-decoration-none">Terminales Automáticas
+          </a>
+          <p>Último cambio 15 de junio de 2022</p>
         </li>
         <li>
-          <a href="https://www.datos.gob.ar/dataset/transporte-sube---cantidad-transacciones-usos-por-fecha" target="_blank"
-          class="text-decoration-none">Cantidad de transacciones (usos) por fecha</a
-          >
+          <a
+            href="https://www.datos.gob.ar/dataset/transporte-sube---cantidad-tarjetas-usuarios-por-dia/archivo/transporte_3511fdd6-2c23-4069-8524-c66191becd06" target="_blank" 
+            class="text-decoration-none">Cantidad de tarjetas (usuarios) por día
+          </a>
+          <p>Último cambio 23 de mayo de 2022</p>
         </li>
       </ul>
       </div>
       <div class="col">
         <ul class="list">
-        <li>
-          <a href="https://www.datos.gob.ar/dataset/transporte-sube---cantidad-tarjetas-usuarios-por-dia" target="_blank"
-          class="text-decoration-none">Cantidad de tarjetas (usuarios) por día</a
-          >
+          <li>
+          <a
+            href="https://datos.transporte.gob.ar/dataset/sube-operaciones-viaje-por-mes-region-metropolitana-buenos-aires-agregado-por-mes/archivo/98cb974d-c519-426d-887e-74aafce389b1" target="_blank"
+            class="text-decoration-none">Operaciones de viaje por Periodo
+          </a>
+          <p>Último cambio 15 de junio de 2022</p>
         </li>
         <li>
-          <a href="https://www.datos.gob.ar/dataset/transporte-operaciones-sube-por-mes-rmba" target="_blank"
-          class="text-decoration-none">Operaciones de SUBE por mes en RMBA</a
-          >
+          <a
+            href="https://datos.transporte.gob.ar/dataset/operaciones-sube-por-ano-rmba/archivo/8258c930-f011-4535-a4f9-651d1e2cae13" target="_blank"
+            class="text-decoration-none">Cantidad de operaciones de viajes por año (detalle por modo)
+          </a>
+          <p>Último cambio 15 de junio de 2022</p>
         </li>
       </ul>
       </div>
