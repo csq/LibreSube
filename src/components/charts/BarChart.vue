@@ -142,8 +142,8 @@ export default {
         if (regex.test(data[i].indice_tiempo)) {
           labels[index] = data[i].indice_tiempo;
           datasets[0].data[index] = data[i].colectivo;
-          datasets[1].data[index] = data[i].subte;
-          datasets[2].data[index] = data[i].tren;
+          datasets[1].data[index] = data[i].tren;
+          datasets[2].data[index] = data[i].subte;
           index++;
         }
       }
