@@ -5,41 +5,31 @@
   </div>
 
   <!-- cards -->
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
     <div class="col">
       <div class="card h-100">
-        <img src="../assets/card_images/img-0.png" class="card-img-top" alt="charge_img">
-        <a href="/charge-points"></a>
+        <a href="/charge-points" class="stretched-link"></a>
         <div class="card-body">
           <h5 class="card-title">Puntos de carga</h5>
-          <p class="card-text">Localice los puntos de carga habilitados más cercanos a usted.</p>
-        </div>
-        <div class="card-link">
-          <a href="/charge-points" class="btn btn-link btn-block">Acceder</a>
+          <p class="card-text">Localice los puntos de carga habilitados más cercanos.</p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card h-100">
-        <img src="../assets/card_images/img-1.png" class="card-img-top" alt="tas_img">
+        <a href="/tas" class="stretched-link"></a>
         <div class="card-body">
           <h5 class="card-title">Terminales automáticas SUBE</h5>
-          <p class="card-text">Encuentre las terminales TAS más cercanas.</p>
-        </div>
-        <div class="card-link">
-          <a href="/tas" class="btn btn-link btn-block">Acceder</a>
+          <p class="card-text">Encuentre las terminales TAS más cercanas a usted.</p>
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="card h-100" style="height: 1rem;">
-        <img src="../assets/card_images/img-2.png" class="card-img-top" alt="chart_img">
+      <div class="card h-100">
+        <a href="/data" class="stretched-link"></a>
         <div class="card-body">
           <h5 class="card-title">Gráficas del uso del sistema SUBE</h5>
           <p class="card-text">Visualice los datos referente al uso del sistema SUBE.</p>
-        </div>
-        <div class="card-link">
-          <a href="/data" class="btn btn-link btn-block">Acceder</a>
         </div>
       </div>
     </div>
@@ -64,24 +54,19 @@ export default {
   margin-top: 0rem;
   margin-bottom: 1rem;
 }
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background: rgba(228, 238, 255, 0.774);
+}
 .card-title {
   font-size: large;
   font-weight: bold;
 }
 .card-text {
-  text-align: start;
-}
-.card-link {
-  border-top: 1px solid #D4D4D4;
-  background-color: whitesmoke;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-.card-link a {
-  text-decoration: none !important;
-  padding: 10px;
-  padding-bottom: 5px;
-  font-weight: 600;
-  text-transform: uppercase;
+  text-align: justify;
 }
 </style>
