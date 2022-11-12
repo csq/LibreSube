@@ -54,6 +54,10 @@
         </li>
       </ul>
       </div>
+      <p class="text-start pt-3">
+        <b>Nota: </b>En ningún caso se realizaron modificaciones a los datasets, todos los cambios
+        mencionados fueron realizados por el propietario de los mismos.
+      </p>
       <h3 class="border-bottom border-dark mb-3 pt-3">Aviso legal</h3>
       <p class="text-start">
         NO GARANTIZAMOS LA EXACTITUD DE LOS DATOS. POR FAVOR UTILÍCELO COMO VISUAL
@@ -63,6 +67,11 @@
         corren en responsabilidad de su originador. Por tal motivo los datos presentados
         podrían no estar actualizados a la fecha de consulta.<br/><br/>
       </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="license">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Licencia Creative Commons Atribución 4.0 Internacional</a>.
     </div>
   </div>
 </template>
