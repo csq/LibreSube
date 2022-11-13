@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col">
         <a href="https://github.com/csq/libre-sube/" target="_blank"><i class="fa fa-github"></i></a>
-        <a href="mailto:carlos.quiroz.90@gmail.com"><i class="fa fa-envelope-o"></i></a>
+        <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><i class="fa fa-creative-commons"></i></a>
       </div>
     </div>
   </div>

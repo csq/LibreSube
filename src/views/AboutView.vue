@@ -69,11 +69,6 @@
       </p>
     </div>
   </div>
-  <div class="row">
-    <div class="license">
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Licencia Creative Commons Atribución 4.0 Internacional</a>.
-    </div>
-  </div>
 </template>
 
 <style scoped>
