@@ -98,6 +98,7 @@ export default {
     getData: function (year) {
       var datasets = this.chartData.datasets;
 
+      // Limpia el array
       if (datasets[0].data.length != 0) {
         datasets[0].data.length = 0;
       }

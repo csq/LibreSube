@@ -92,6 +92,7 @@ export default {
     // Extrae los datos del csv y los almacena en arrays
     getData: function(year) {
 
+      // Limpia los array
       if (bus.length != 0) {
         bus.length = 0;
         subway.length = 0;
