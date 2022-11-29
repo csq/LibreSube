@@ -86,11 +86,17 @@ export default {
 
           // Cada marcador es un circulo con su propia lat y lng 
           var marker = L.circleMarker(latlng, geojsonMarkerOptions);
+
+          // Solo muestra el nro de calles/avenidas significativas
+          var numero = ''
+          if (feature.properties[ 'N�mero' ] != "0") {
+            numero = feature.properties[ 'N�mero' ]
+          }
           
           // Define el formato del popup
           marker.bindPopup(
             '<b><center>' + feature.properties[ 'Ubicaci�' ] + '</center></b>' + '<br>'+
-            '<b>Dirección: </b>' + feature.properties[ 'Direcci�' ] + '<br>'+
+            '<b>Dirección: </b>' + feature.properties[ 'Direcci�' ] + ' ' + numero + '<br>'+
             '<b>Localidad: </b>' + feature.properties.Localidad + '<br>'+
             '<b>Tipo: </b>' + feature.properties[ 'Tipo Ubica' ]);
           
