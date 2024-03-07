@@ -1,24 +1,24 @@
 # LibreSube
 
-## Project setup
+## Proposito
+LibreSUBE es una aplicación de página única (Single-page application) que reúne y muestra información del Sistema Único de Boleto Electrónico (SUBE) de la República Argentina tales como la ubicación de los puntos de carga, terminales de autoservicio, e información de la utilización del sistema. Toda la información reunida y visualizada en esta aplicación se basan en datos primarios generados por el sistema SUBE. 
+
+
+## Vista previa
+https://csq.github.io/LibreSube/
+
+
+## Instalación
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilación con hot-reloads para desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilacíon para salida a producción
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
