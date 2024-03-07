@@ -1,4 +1,4 @@
-# libre-sube
+# LibreSube
 
 ## Project setup
 ```

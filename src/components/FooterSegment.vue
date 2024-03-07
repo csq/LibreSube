@@ -4,7 +4,7 @@
   <div class="container p-1">
     <div class="row">
       <div class="col">
-        <a href="https://github.com/csq/libre-sube/" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/csq/LibreSube/" target="_blank"><i class="fa fa-github"></i></a>
         <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><i class="fa fa-creative-commons"></i></a>
       </div>
     </div>
