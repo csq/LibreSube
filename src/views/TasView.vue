@@ -72,7 +72,9 @@ export default {
       map.addControl(new L.Control.Fullscreen());
 
       // Contendra al conjunto de marcadores
-      var markers = new MarkerClusterGroup();
+      var markers = new MarkerClusterGroup({
+        chunkedLoading: true
+      });
       
       L.geoJson(dataset, {
         pointToLayer: function (feature) {
@@ -96,9 +98,12 @@ export default {
             '<b>Dirección: </b>' + feature.properties[ 'Direcci�' ] + ' ' + numero + '<br>'+
             '<b>Localidad: </b>' + feature.properties.Localidad + '<br>'+
             '<b>Tipo: </b>' + feature.properties[ 'Tipo Ubica' ]);
+
+          var marker_list = []
+          marker_list.push(marker)
           
           // Agrega cada marcador al conjunto de marcadores
-          markers.addLayers(marker);
+          markers.addLayers(marker_list);
         }
       })
       
