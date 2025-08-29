@@ -89,7 +89,28 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            type: 'category',
+            title: {
+              display: false,
+              text: 'Meses',
+            },
+          },
+          y: {
+            type: 'linear',
+            title: {
+              display: true,
+              text: 'Operaciones (Millones)',
+            },
+            ticks: {
+              callback: function(value) {
+                return (value / 1000000) + 'M';
+              },
+            },
+          },
+        },
       }
     }
   },

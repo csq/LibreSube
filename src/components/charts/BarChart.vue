@@ -121,6 +121,27 @@ export default {
               mode: 'x'
             }
           }
+        },
+        scales: {
+          x: {
+            type: 'category',
+            title: {
+              display: false,
+              text: 'Fecha',
+            },
+          },
+          y: {
+            type: 'linear',
+            title: {
+              display: true,
+              text: 'Usuarios (Millones)',
+            },
+            ticks: {
+              callback: function(value) {
+                return value / 1000000 + 'M';
+              }
+            }
+          }
         }
       }
     }
