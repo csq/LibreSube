@@ -17,10 +17,13 @@
       Año
     </button>
     <ul class="dropdown-menu dropdown-menu-dark">
-      <li><a class="dropdown-item selected" v-on:click="getData(2022)">2022</a></li>
+      <li><a class="dropdown-item selected" v-on:click="getData(2025)">2025</a></li>
       <li>
         <hr class="dropdown-divider">
       </li>
+      <li><a class="dropdown-item" v-on:click="getData(2024)">2024</a></li>
+      <li><a class="dropdown-item" v-on:click="getData(2023)">2023</a></li>
+      <li><a class="dropdown-item" v-on:click="getData(2022)">2022</a></li>
       <li><a class="dropdown-item" v-on:click="getData(2021)">2021</a></li>
       <li><a class="dropdown-item" v-on:click="getData(2020)">2020</a></li>
     </ul>
@@ -152,7 +155,7 @@ export default {
     }
   },
   created: function() {
-    this.getData('2022');
+    this.getData('2025');
   }
 }           
 </script>
