@@ -13,8 +13,7 @@
   />
   <div class="dropdown">
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-      aria-expanded="false">
-      Año
+      aria-expanded="false">{{ LineChartYear }}
     </button>
     <ul class="dropdown-menu dropdown-menu-dark">
       <li><a class="dropdown-item selected" v-on:click="getData(2019)">2019</a></li>
@@ -112,7 +111,9 @@ export default {
           month_index++;
         }
       }
-      this.LineChartTitle = 'Operaciones de viaje en ' + year + ' por mes en la Región Metropolitana de Buenos Aires';
+
+      this.LineChartYear = year;
+      this.LineChartTitle = 'Operaciones de viaje en '+ year +' por mes en la Región Metropolitana de Buenos Aires';
     }
   },
   created: function () {

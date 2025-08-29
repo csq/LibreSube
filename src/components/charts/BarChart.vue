@@ -13,8 +13,7 @@
   />
   <div class="dropdown">
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-      aria-expanded="false">
-      Año
+      aria-expanded="false">{{ BarChartYear }}
     </button>
     <ul class="dropdown-menu dropdown-menu-dark">
       <li><a class="dropdown-item selected" v-on:click="getData(2025)">2025</a></li>
@@ -151,7 +150,8 @@ export default {
           index++;
         }
       }
-      this.BarChartTitle = 'Usuarios por día en ' + year;
+      this.BarChartYear = year;
+      this.BarChartTitle = 'Usuarios por día '+ year;
     }
   },
   created: function() {

@@ -13,7 +13,7 @@
   />
   <div class="dropdown">
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Año
+        {{ PieChartYear }}
     </button>
     <ul class="dropdown-menu dropdown-menu-dark">
       <li><a class="dropdown-item selected" v-on:click="getData(2019)">2019</a></li>
@@ -115,7 +115,8 @@ export default {
 
       }
       // Establece en título del chart según el año seleccionado
-      this.PieChartTitle = 'Usuarios en '+year+' por modo de transporte en la Región Metropolitana de Buenos Aires';
+      this.PieChartYear = year;
+      this.PieChartTitle = 'Usuarios en '+ year +' por modo de transporte en la Región Metropolitana de Buenos Aires';
       
       this.updateData();
     },
