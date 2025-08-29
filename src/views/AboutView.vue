@@ -40,14 +40,14 @@
         <ul class="list">
           <li>
           <a
-            href="https://datos.transporte.gob.ar/dataset/sube-operaciones-viaje-por-mes-region-metropolitana-buenos-aires-agregado-por-mes/archivo/98cb974d-c519-426d-887e-74aafce389b1" target="_blank"
+            href="https://datos.transporte.gob.ar/dataset/operaciones-por-periodo/archivo/98cb974d-c519-426d-887e-74aafce389b1" target="_blank"
             class="text-decoration-none">Operaciones de viaje por Periodo
           </a>
           <p>Último cambio 15 de junio de 2022</p>
         </li>
         <li>
           <a
-            href="https://datos.transporte.gob.ar/dataset/operaciones-sube-por-ano-rmba/archivo/8258c930-f011-4535-a4f9-651d1e2cae13" target="_blank"
+            href="https://datos.transporte.gob.ar/dataset/operaciones-de-sube-por-ano-en-rmba/archivo/8258c930-f011-4535-a4f9-651d1e2cae13" target="_blank"
             class="text-decoration-none">Cantidad de operaciones de viajes por año (detalle por modo)
           </a>
           <p>Último cambio 15 de junio de 2022</p>
