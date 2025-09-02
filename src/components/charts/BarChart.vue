@@ -163,7 +163,7 @@ export default {
 
       for (let i = 0; i < data.length; i++) {
         if (regex.test(data[i].indice_tiempo)) {
-          labels[index] = data[i].indice_tiempo;
+          labels[index] = this.convertDate(data[i].indice_tiempo);
           datasets[0].data[index] = data[i].colectivo;
           datasets[1].data[index] = data[i].tren;
           datasets[2].data[index] = data[i].subte;
@@ -172,10 +172,15 @@ export default {
       }
       this.BarChartYear = year;
       this.BarChartTitle = `Usuarios por día ${year}`;
+    },
+    convertDate: function (originalDate) {
+      const [, month, day] = originalDate.split('-');
+      return `${month}/${day}`;
     }
   },
   created: function() {
     this.getData('2025');
   }
+
 }           
 </script>
