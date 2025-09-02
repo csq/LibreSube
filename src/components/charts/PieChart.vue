@@ -74,7 +74,8 @@ export default {
   // Configuración PieChart
   data() {
     return {
-      PieChartTitle: '',
+      PieChartTitle: 'Usuarios en 2019 por modo de transporte en la Región Metropolitana de Buenos Aires',
+      PieChartYear: '2019',
       chartData: {
         labels: [ 'Colectivo', 'Tren', 'Subte' ],
         datasets: [ {
@@ -93,11 +94,9 @@ export default {
     getData: function(year) {
 
       // Limpia los array
-      if (bus.length != 0) {
-        bus.length = 0;
-        subway.length = 0;
-        train.length = 0;
-      }
+      bus.length = 0;
+      subway.length = 0;
+      train.length = 0;
 
       const regex = new RegExp(year);
 
@@ -116,8 +115,8 @@ export default {
       }
       // Establece en título del chart según el año seleccionado
       this.PieChartYear = year;
-      this.PieChartTitle = 'Usuarios en '+ year +' por modo de transporte en la Región Metropolitana de Buenos Aires';
-      
+      this.PieChartTitle = `Usuarios en ${year} por modo de transporte en la Región Metropolitana de Buenos Aires`;
+
       this.updateData();
     },
     // Actualiza los datos del chart para que se visualizen

@@ -78,7 +78,8 @@ export default {
   },
   data() {
     return {
-      LineChartTitle: '',
+      LineChartTitle: 'Operaciones de viaje en 2019 por mes en la Región Metropolitana de Buenos Aires',
+      LineChartYear: '2019',
       chartData: {
         labels: mes,
         datasets: [{
@@ -119,9 +120,7 @@ export default {
       var datasets = this.chartData.datasets;
 
       // Limpia el array
-      if (datasets[0].data.length != 0) {
-        datasets[0].data.length = 0;
-      }
+      datasets[0].data.length = 0;
 
       const regex = new RegExp(year);
       var month_index = 1;
@@ -134,7 +133,7 @@ export default {
       }
 
       this.LineChartYear = year;
-      this.LineChartTitle = 'Operaciones de viaje en '+ year +' por mes en la Región Metropolitana de Buenos Aires';
+      this.LineChartTitle = `Operaciones de viaje en ${year} por mes en la Región Metropolitana de Buenos Aires`;
     }
   },
   created: function () {

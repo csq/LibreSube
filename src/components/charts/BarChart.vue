@@ -79,7 +79,8 @@ export default {
   },
   data() {
     return {
-      BarChartTitle: '',
+      BarChartTitle: 'Usuarios por dia 2025',
+      BarChartYear: '2025',
       chartData: {
         labels: date,
         datasets: [ {
@@ -152,11 +153,9 @@ export default {
       var labels = this.chartData.labels;
 
       // Limpia los array
-      if ( datasets[0].data.length != 0) {
-        labels.length = 0;
-        for (let index = 0; index < 3; index++) {
-          datasets[index].data.length = 0;
-        }
+      labels.length = 0;
+      for (let index = 0; index < 3; index++) {
+        datasets[index].data.length = 0;
       }
 
       const regex = new RegExp(year+'-*');
@@ -172,7 +171,7 @@ export default {
         }
       }
       this.BarChartYear = year;
-      this.BarChartTitle = 'Usuarios por día '+ year;
+      this.BarChartTitle = `Usuarios por día ${year}`;
     }
   },
   created: function() {
