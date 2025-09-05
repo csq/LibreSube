@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+    <div class="container">
+    <LoadingSpinner :isLoading="loading" />
     <h5>Centros de carga SUBE</h5>
     <div class="row pt-2">
       <div class="col-lg col-md-7 cold-sm">
@@ -38,9 +39,13 @@ import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
 
 import dataset from "@/datasets/Puntos de carga SUBE/sube_red_de_carga_activa_2019-10-01.geojson";
+import LoadingSpinner from "@/components/LoadingSpinner.vue";
 
 // Variable contendrá la instancia del mapa
 var map;
+
+// Booleano para indicar si es la primera vez que se carga el mapa
+var isInitialLoading = true;
 
 var geojsonMarkerOptions = {
     radius: 8,
@@ -56,10 +61,11 @@ export default {
     return{
       center: [-42, -65], // Arg
       minZoom: 4,
-      maxZoom: 15
+      maxZoom: 15,
+      loading: isInitialLoading
     }
   },
-  
+
   methods: {
     setupLeafletMap: function (center, zoom) {
       map = L.map("mapContainer").setView(center, zoom);
@@ -116,7 +122,14 @@ export default {
   },
 
   mounted() {
-    this.setupLeafletMap(this.center, this.minZoom);
+    if (isInitialLoading) {
+        setTimeout(() => {
+            this.setupLeafletMap(this.center, this.minZoom);
+            this.loading = false;
+        }, 1000);
+
+        isInitialLoading = false;
+    }
   },
 
   created() {
@@ -124,8 +137,8 @@ export default {
       // Obtener lat y lng
       this.center = [position.coords.latitude, position.coords.longitude];
 
-      // Marcador en la posición geolocalizada
       var marker = new L.Marker(this.center);
+      // Marcador en la posición geolocalizada
       map.setView(this.center, this.maxZoom);
       marker.addTo(map);
       marker.bindPopup('<b>Ubicación <br> apróximada</b>');
@@ -146,7 +159,12 @@ export default {
 
     // Esto abrirá una ventana emergente de permiso
     navigator.geolocation.getCurrentPosition(success, error, options);
+  },
+
+  components: {
+    LoadingSpinner
   }
+
 };
 </script>
 
