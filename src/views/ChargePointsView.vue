@@ -82,7 +82,10 @@ export default {
 
       // Contendra al conjunto de marcadores
       var markers = new MarkerClusterGroup({
-        chunkedLoading: true
+        chunkedLoading: true,
+        maxClusterRadius: 50,
+        disableClusterAtZoom: 10,
+        spiderfyOnMaxZoom: false
       });
       
       L.geoJson(dataset, {
