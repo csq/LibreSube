@@ -109,11 +109,7 @@ export default {
       
       // Agrega los marcadores en el mapa
       map.addLayer(markers);
-    },
-  },
-
-  mounted() {
-    this.setupLeafletMap(this.center, this.minZoom);
+    }
   },
 
   created() {
@@ -132,7 +128,7 @@ export default {
       //console.warn(`ERROR(${err.code}): ${err.message}`);
       if (err.code == 1) {
         // User denied geolocation
-      } 
+      }
     };
 
     const options = {
@@ -143,7 +139,16 @@ export default {
 
     // Esto abrirá una ventana emergente de permiso
     navigator.geolocation.getCurrentPosition(success, error, options);
+  },
+
+  mounted() {
+    this.setupLeafletMap(this.center, this.minZoom);
+  },
+
+  unmounted() {
+    map.remove();
   }
+
 };
 </script>
 

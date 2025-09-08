@@ -129,7 +129,13 @@ export default {
         }, 1000);
 
         isInitialLoading = false;
+    } else {
+        this.setupLeafletMap(this.center, this.minZoom);
     }
+  },
+
+  unmounted() {
+    map.remove();
   },
 
   created() {
