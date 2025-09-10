@@ -44,9 +44,6 @@ import LoadingSpinner from "@/components/LoadingSpinner.vue";
 // Variable contendrá la instancia del mapa
 var map;
 
-// Booleano para indicar si es la primera vez que se carga el mapa
-var isInitialLoading = true;
-
 var geojsonMarkerOptions = {
     radius: 8,
     color: "#0378A6",
@@ -62,7 +59,7 @@ export default {
       center: [-42, -65], // Arg
       minZoom: 4,
       maxZoom: 15,
-      loading: isInitialLoading
+      loading: true
     }
   },
 
@@ -125,15 +122,11 @@ export default {
   },
 
   mounted() {
-    if (isInitialLoading) {
+    this.setupLeafletMap(this.center, this.minZoom);
+    if (this.loading) {
         setTimeout(() => {
-            this.setupLeafletMap(this.center, this.minZoom);
             this.loading = false;
-        }, 1000);
-
-        isInitialLoading = false;
-    } else {
-        this.setupLeafletMap(this.center, this.minZoom);
+        }, 1200);
     }
   },
 
