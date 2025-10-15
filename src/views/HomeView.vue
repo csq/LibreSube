@@ -8,7 +8,7 @@
   <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
     <div class="col">
       <div class="card h-100">
-        <a href="/charge-points" class="stretched-link"></a>
+        <router-link to="/charge-points" class="stretched-link"></router-link>
         <div class="card-body">
           <h5 class="card-title">Puntos de carga</h5>
           <p class="card-text">Localice los puntos de carga habilitados más cercanos.</p>
@@ -17,7 +17,7 @@
     </div>
     <div class="col">
       <div class="card h-100">
-        <a href="/tas" class="stretched-link"></a>
+        <router-link to="/tas" class="stretched-link"></router-link>
         <div class="card-body">
           <h5 class="card-title">Terminales automáticas SUBE</h5>
           <p class="card-text">Encuentre las terminales TAS más cercanas a usted.</p>
@@ -26,7 +26,7 @@
     </div>
     <div class="col">
       <div class="card h-100">
-        <a href="/data" class="stretched-link"></a>
+        <router-link to="/data" class="stretched-link"></router-link>
         <div class="card-body">
           <h5 class="card-title">Gráficas del uso del sistema SUBE</h5>
           <p class="card-text">Visualice los datos referente al uso del sistema SUBE.</p>
