@@ -5,10 +5,9 @@
 
 
 ## Vista previa
-https://csq.github.io/LibreSube/
-
-### [Demo](https://csq.github.io/LibreSube/)
-
+<p align="center">
+    <img src="preview.gif" alt="preview" />
+</p>
 
 ## Instalación
 ```
