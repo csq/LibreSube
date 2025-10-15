@@ -2,7 +2,7 @@
   <h5>{{ PieChartTitle }}</h5>
   <Pie
     :chart-options="chartOptions"
-    :chart-data="chartData"
+    :data="chartData"
     :chart-id="chartId"
     :dataset-id-key="datasetIdKey"
     :plugins="plugins"

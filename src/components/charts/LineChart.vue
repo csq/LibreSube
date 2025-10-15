@@ -2,7 +2,7 @@
   <h5>{{ LineChartTitle }}</h5>
   <Line
     :chart-options="chartOptions"
-    :chart-data="chartData"
+    :data="chartData"
     :chart-id="chartId"
     :dataset-id-key="datasetIdKey"
     :plugins="plugins"

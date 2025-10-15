@@ -2,7 +2,7 @@
   <h5>{{ BarChartTitle }}</h5>
   <Bar
     :chart-options="chartOptions"
-    :chart-data="chartData"
+    :data="chartData"
     :chart-id="chartId"
     :dataset-id-key="datasetIdKey"
     :plugins="plugins"
