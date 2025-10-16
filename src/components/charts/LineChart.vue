@@ -1,8 +1,8 @@
 <template>
   <h5>{{ LineChartTitle }}</h5>
   <Line
-    :chart-options="chartOptions"
     :data="chartData"
+    :options="chartOptions"
     :chart-id="chartId"
     :dataset-id-key="datasetIdKey"
     :plugins="plugins"
@@ -90,7 +90,7 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         scales: {
           x: {
             type: 'category',

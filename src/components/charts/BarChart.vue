@@ -1,8 +1,8 @@
 <template>
   <h5>{{ BarChartTitle }}</h5>
   <Bar
-    :chart-options="chartOptions"
     :data="chartData"
+    :options="chartOptions"
     :chart-id="chartId"
     :dataset-id-key="datasetIdKey"
     :plugins="plugins"
@@ -101,7 +101,7 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         plugins: {
           zoom: {
             zoom: {

@@ -1,8 +1,8 @@
 <template>
   <h5>{{ PieChartTitle }}</h5>
   <Pie
-    :chart-options="chartOptions"
     :data="chartData"
+    :options="chartOptions"
     :chart-id="chartId"
     :dataset-id-key="datasetIdKey"
     :plugins="plugins"
@@ -85,7 +85,7 @@ export default {
       },
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: true
       }
     }
   },
